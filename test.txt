@@ -1,0 +1,48 @@
+
+  877  docker build . -t "relations-service"
+  878  docker container stop $(docker container ls)
+  879  docker container stop $(docker container ls -a )
+  880  docker container stop $(docker container ls -a)
+  881  docker build . -t "relations-service"
+  882  docker run relations-service:latest -p 8080:3000
+  883  docker run -d -p 8081:3000
+  884  docker run -d -p 8081:3000 test1
+  885  docker run -d -p 8081:3000 relations-service
+  886  docker container f6f873875654366dd498956ef194c04aaf2a26564152990bae63b9aee7156f22 logs
+  887  docker container ls
+  888  docker container stop $(docker container ls -a )
+  889  docker container stop $(docker container ls  )
+  890  docker container stop $(docker container ls)
+  891  docker container stop $(docker container ls -a)
+  892  docker container ls -a
+  893  docker container killall
+  894  docker kill $(docker ps -q)
+  895  docker ps -1
+  896  docker ps -q
+  897  docker ps -a -q
+  898  docker kill $(docker ps -a -q)
+  899  docker stop $(docker ps -a -q)
+  900  docker kill $(docker ps -a -q)
+  901  docker stop $(docker ps -a -q)
+  902  docker rm $(docker ps -a -q)
+  903  docker rmi $(docker images -q)
+  904  docker ls 
+  905  docker ls -a 
+  906  docker -ls -a 
+  907  docker ls
+  908  docker image ls
+  909  docker image ls -a
+  910  docker build . -t  relations
+  911  docker run -d -p 3000:3000 relations
+  912  docker run \\n    --name testneo4j \\n    -p7474:7474 -p7687:7687 \\n    -d \\n    -v $HOME/neo4j/data:/data \\n    -v $HOME/neo4j/logs:/logs \\n    -v $HOME/neo4j/import:/var/lib/neo4j/import \\n    -v $HOME/neo4j/plugins:/plugins \\n    --env NEO4J_AUTH=neo4j/test \\n    neo4j:latest
+  913  docker ps
+  914  docker exec -it testneo4j bash
+  915  history
+  916  history --help
+  917  grep "ssh" ~/.bash_history
+  918  grep "[800 -1000]*" history
+  919  history | grep *a*
+  920  history | grep
+  921  history | grep .
+  922  history | grep 9*
+  923  history | grep "[8-9]* "

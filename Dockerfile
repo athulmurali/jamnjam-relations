@@ -1,7 +1,9 @@
-FROM node:7
-WORKDIR /app
-COPY package.json /app
+FROM node:12
+
+RUN pwd
+COPY server/ /app/server/
+RUN rm -r /app/server/node_modules
+WORKDIR /app/server
 RUN npm install
-COPY . /app
-CMD node index.js
-EXPOSE 8081
+CMD node server.js
+EXPOSE 3000
