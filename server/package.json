@@ -8,7 +8,8 @@
   },
   "dependencies": {
     "envalid": "^5.0.0",
-    "express": "^4.13.3"
+    "express": "^4.13.3",
+
   },
   "engines": {
     "node": "^4.0.0"
@@ -22,7 +23,7 @@
     "heroku",
     "express"
   ],
-  "author": "Athul Muralidharann",
+  "author": "Athul Muralidharan",
   "contributors": [],
   "license": "MIT"
 }
