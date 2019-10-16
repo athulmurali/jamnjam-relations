@@ -1,35 +1,17 @@
-var express = require('express');
-var app = express();
-
-var neo4j = require('node-neo4j');
-var db = new neo4j('http://neo4j:test@neo4j:7474');
-
+const express = require('express');
+const app = express();
+const bodyParser = require('body-parser');
+app.use(bodyParser.json()); // for parsing application/json
+app.use(bodyParser.urlencoded({extended: true})); // for parsing
 app.use('/', express.static(__dirname + '/view'));
 
-app.get('/tools/load', function (req, res, next) {
-    db.insertNode({
-        name: 'Darth Vader #' + parseInt(Math.random() * 100),
-        sex: 'male'
-    }, ['Person'], function (err, node) {
-        if (err) return next(err);
+const toolsRouter = require('./apis/tools');
+const membersRouter = require('./apis/members')
+const bandsRouter = require('./apis/bands')
 
-        res.json(node);
-    });
-});
-
-app.get('/tools/drop', function (req, res, next) {
-    db.cypherQuery("MATCH (n) DETACH DELETE n", function (err, result) {
-        if (err) return next(err);
-        res.json(result);
-    });
-});
-
-app.get('/persons', function (req, res, next) {
-    db.cypherQuery("MATCH (person:Person) RETURN person", function (err, result) {
-        if (err) return next(err);
-        res.json(result.data);
-    });
-});
+app.use('/tools', toolsRouter);
+app.use('/members', membersRouter);
+app.use('/bands', bandsRouter);
 
 
 app.listen(3000, function () {

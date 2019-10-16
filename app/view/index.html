@@ -48,7 +48,16 @@
 <body ng-controller="MainCtrl">
 
 <div class="container">
-  <h2>Neo4j example</h2>
+  <h2>Persons</h2>
+  <a class="btn btn-default" ng-click="load()" role="button">Load</a>
+  <a class="btn btn-default" ng-click="drop()" role="button">Drop</a>
+
+  <div ng-repeat="node in nodes">
+    <pre>{{node | json }}</pre>
+  </div>
+</div>
+<div class="container">
+  <h2>Bands</h2>
   <a class="btn btn-default" ng-click="load()" role="button">Load</a>
   <a class="btn btn-default" ng-click="drop()" role="button">Drop</a>
 
