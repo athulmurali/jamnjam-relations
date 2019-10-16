@@ -34,5 +34,13 @@ router.delete('/:bandId/', function (req, res, next) {
     })
 })
 
+router.get('/:bandId/members',function(req, res, next){
+    const bandId = req.params['bandId'];
 
+    db.cypherQuery(`MATCH (m:Member)-[:playsWith]->(b:Band{id:${bandId}}) RETURN m`,function (err,result) {
+        if (err) return next(err);
+        res.json(result.data);
+    } )
+
+})
 module.exports = router;
